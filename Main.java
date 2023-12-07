@@ -2,12 +2,20 @@ package StackAndQueue;
 
 public class Main {
     public static void main(String[] args) {
-        StackAndQueue stackAdd = new StackAndQueue();
+        StackAndQueue s = new StackAndQueue();
 
-        stackAdd.push(70);
-        stackAdd.push(30);
-        stackAdd.push(56);
-        stackAdd.display();
+        s.push(70);
+        s.push(30);
+        s.push(56);
+
+        while(!s.isEmpty()){
+            System.out.println(s.peek());
+            s.pop();
+        }
+        s.display();
+
+
+
     }
 
 }
