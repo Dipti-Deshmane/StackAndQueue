@@ -7,6 +7,7 @@ public class Main {
         Q.add(56);
         Q.add(30);
         Q.add(70);
+        Q.remove();
         Q.display();
 
 
