@@ -1,54 +1,30 @@
 package StackAndQueue;
 
 public class StackAndQueue {
-    public static Node head;
 
-    public static boolean isEmpty() {
-        return head == null;
-
+    static Node front, rear;
+    StackAndQueue(){
+    front=null;
+    rear=null;
     }
 
-    public static void push(int data) {
-
+    public void add(int data){
         Node newNode = new Node(data);
-
-        if (isEmpty()){
-           head = newNode;
-           return;
+        if(rear==null){
+            front=newNode;
+            rear = newNode;
+            }else {
+            rear.next = newNode;
+            rear = newNode;
         }
-
-        newNode.next = head;
-        head = newNode;
-
-    }
-
-    public static int pop() {
-        if (isEmpty()) {
-            return -1;
         }
-        int top = head.data;
-        head = head.next;
-        return top;
-    }
-    public static int peek(){
-      if(isEmpty()){
-          return -1;
-      }
-      return head.data;
-
-    }
-
-
-  public static void display(){
-        Node newNode = head;
+    public void display(){
+        Node newNode = front;
         while(newNode!=null){
             System.out.print(newNode.data+ "-->");
             newNode=newNode.next;
         }
-      System.out.println("Stack is empty now");
-
-
     }
-
-
 }
+
+
